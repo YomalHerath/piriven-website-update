@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#111"/>
+      <stop offset="100%" stop-color="#b91c1c"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="18" fill="url(#g)"/>
+  <circle cx="64" cy="48" r="18" fill="#fbbf24"/>
+  <path d="M28 100c8-18 22-28 36-28s28 10 36 28" fill="none" stroke="#fbbf24" stroke-width="6" stroke-linecap="round"/>
+  <text x="64" y="118" text-anchor="middle" font-family="Segoe UI, Roboto, Arial" font-size="18" fill="#fff" opacity="0.9">Piriven</text>
+</svg>

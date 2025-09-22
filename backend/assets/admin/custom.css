@@ -1,0 +1,80 @@
+﻿.btn.btn-danger,
+.btn.btn-outline-danger:hover {
+  background-color: #c53030;
+  border-color: #c53030;
+  color: #fff;
+}
+
+.btn.btn-success {
+  background-color: #2f855a;
+  border-color: #2f855a;
+  color: #fff;
+}
+
+.btn.btn-warning {
+  background-color: #dd6b20;
+  border-color: #dd6b20;
+  color: #fff;
+}
+
+.btn.btn-info {
+  background-color: #3182ce;
+  border-color: #3182ce;
+  color: #fff;
+}
+
+.btn.btn-outline-secondary {
+  border-color: #4a5568;
+  color: #4a5568;
+}
+
+.btn.btn-outline-secondary:hover {
+  background-color: #4a5568;
+  border-color: #4a5568;
+  color: #fff;
+}
+
+.btn.btn-outline-danger {
+  border-color: #c53030;
+  color: #c53030;
+}
+\nSidebar layout tweaks
+.main-sidebar,
+.main-sidebar::before,
+.main-sidebar::after,
+.brand-link {
+  width: 260px;
+}
+
+.content-wrapper,
+.main-footer,
+.main-header {
+  margin-left: 260px;
+}
+
+body.sidebar-collapse .main-sidebar,
+body.sidebar-collapse .main-sidebar::before,
+body.sidebar-collapse .main-sidebar::after {
+  width: 80px;
+}
+
+body.sidebar-collapse .content-wrapper,
+body.sidebar-collapse .main-footer,
+body.sidebar-collapse .main-header {
+  margin-left: 80px;
+}
+
+.main-sidebar .nav-sidebar .nav-link p {
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.brand-link .brand-image,
+.brand-link .brand-text {
+  display: none !important;
+}
+
+.brand-link {
+  padding-left: 1.5rem;
+  min-height: 3.5rem;
+}
