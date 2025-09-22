@@ -297,7 +297,6 @@ class LibraryPublicationCategory(TimeStamped):
         verbose_name = "Book category"
         verbose_name_plural = "Book categories"
         db_table = "library_publicationcategory"
-        managed = False
 
     def __str__(self):
         return self.name
@@ -333,7 +332,6 @@ class LibraryPublicationEntry(TimeStamped):
         verbose_name = "Book (Library)"
         verbose_name_plural = "Books (Library)"
         db_table = "library_publicationentry"
-        managed = False
 
     def clean(self):
         if not self.pdf_file and not self.external_url:
@@ -360,7 +358,6 @@ class LibraryPublicationImage(TimeStamped):
         verbose_name = "Publication Image"
         verbose_name_plural = "Publication Images"
         db_table = "library_publicationimage"
-        managed = False
 
     def __str__(self):
         return f"Image for {self.publication.title}"
@@ -490,12 +487,4 @@ class FooterAbout(TimeStamped):
 
     def __str__(self):
         return self.title or "Footer about"
-
-
-
-
-
-
-
-
 

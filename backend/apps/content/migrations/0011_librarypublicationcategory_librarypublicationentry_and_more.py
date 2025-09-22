@@ -28,7 +28,6 @@ class Migration(migrations.Migration):
                 'verbose_name_plural': 'Book categories',
                 'db_table': 'library_publicationcategory',
                 'ordering': ['position', 'name'],
-                'managed': False,
             },
         ),
         migrations.CreateModel(
@@ -58,7 +57,6 @@ class Migration(migrations.Migration):
                 'verbose_name_plural': 'Books (Library)',
                 'db_table': 'library_publicationentry',
                 'ordering': ['-published_at', '-created_at'],
-                'managed': False,
             },
         ),
         migrations.CreateModel(
@@ -76,7 +74,6 @@ class Migration(migrations.Migration):
                 'verbose_name_plural': 'Publication Images',
                 'db_table': 'library_publicationimage',
                 'ordering': ['created_at'],
-                'managed': False,
             },
         ),
     ]
