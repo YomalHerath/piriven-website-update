@@ -1,8 +1,8 @@
-﻿'use client';
+'use client';
 
 import Script from 'next/script';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.piriven.education';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://piriven.moe.gov.lk';
 
 const structuredData = {
   '@context': 'https://schema.org',

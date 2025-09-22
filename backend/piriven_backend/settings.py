@@ -8,7 +8,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "change-me-unsafe-secret-key")
 DEBUG = os.getenv("DJANGO_DEBUG", "True") == "True"
 
 # Allow single or comma-separated env vars:
-_raw_hosts = os.getenv("DJANGO_ALLOWED_HOSTS") or os.getenv("DJANGO_ALLOWED_HOST", "127.0.0.1,localhost")
+_raw_hosts = os.getenv("DJANGO_ALLOWED_HOSTS") or os.getenv("DJANGO_ALLOWED_HOST", "127.0.0.1,localhost,piriven.moe.gov.lk,122.255.40.206")
 ALLOWED_HOSTS = ["*"] if _raw_hosts.strip() == "*" else [h.strip() for h in _raw_hosts.split(",") if h.strip()]
 
 # ==== Apps ====
@@ -105,20 +105,39 @@ REST_FRAMEWORK = {
     "PAGE_SIZE_QUERY_PARAM": "page_size",
 }
 
-# ==== CORS (for Next.js dev on 8080) ====
-CORS_ALLOWED_ORIGINS = [
+# ==== CORS / CSRF ====
+_default_cors_origins = [
     "http://localhost:8080",
     "http://127.0.0.1:8080",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+    "https://piriven.moe.gov.lk",
+    "http://piriven.moe.gov.lk",
+    "https://122.255.40.206",
+    "http://122.255.40.206",
 ]
+_env_cors = os.getenv("DJANGO_CORS_ALLOWED_ORIGINS")
+CORS_ALLOWED_ORIGINS = (
+    [origin.strip() for origin in _env_cors.split(",") if origin.strip()]
+    if _env_cors
+    else _default_cors_origins
+)
 CORS_ALLOW_CREDENTIALS = True  # fine for dev; in prod, set only if you actually use cookies
 
-# If you will POST with cookies/CSRF from 8080, add:
-CSRF_TRUSTED_ORIGINS = [
+_default_csrf = [
     "http://localhost:8080",
     "http://127.0.0.1:8080",
+    "https://piriven.moe.gov.lk",
+    "http://piriven.moe.gov.lk",
+    "https://122.255.40.206",
+    "http://122.255.40.206",
 ]
+_env_csrf = os.getenv("DJANGO_CSRF_TRUSTED_ORIGINS")
+CSRF_TRUSTED_ORIGINS = (
+    [origin.strip() for origin in _env_csrf.split(",") if origin.strip()]
+    if _env_csrf
+    else _default_csrf
+)
 
 # ==== Jazzmin Admin customization ====
 JAZZMIN_SETTINGS = {

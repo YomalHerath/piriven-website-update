@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.piriven.education';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://piriven.moe.gov.lk';
 const DEFAULT_TITLE = 'Division of Piriven Education';
 const DESCRIPTION = 'Official portal of the Division of Piriven & Bhikkhu Education sharing news, publications, events, and resources for Sri Lankan Piriven institutions.';
 

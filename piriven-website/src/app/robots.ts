@@ -1,6 +1,6 @@
-﻿import type { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.piriven.education';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://piriven.moe.gov.lk';
 
 export default function robots(): MetadataRoute.Robots {
   return {

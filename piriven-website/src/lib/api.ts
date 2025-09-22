@@ -1,5 +1,9 @@
-﻿export const API_BASE =
-  (process.env.NEXT_PUBLIC_API || "http://127.0.0.1:8000/api").replace(/\/$/, "");
+﻿const DEFAULT_API = process.env.NODE_ENV === "development"
+  ? "http://127.0.0.1:8000/api"
+  : "https://piriven.moe.gov.lk/api";
+
+export const API_BASE =
+  (process.env.NEXT_PUBLIC_API || DEFAULT_API).replace(/\/$/, "");
 
 export async function apiFetch(path: string, init?: RequestInit) {
   const url = `${API_BASE}${path}`;
@@ -10,10 +14,10 @@ export async function apiFetch(path: string, init?: RequestInit) {
   return res.json();
 }
 
-/** Turn /media/... into http://127.0.0.1:8000/media/... */
+/** Turn /media/... into the correct media host for the active API */
 export function mediaUrl(path?: string | null) {
   if (!path) return "";
-  const base = API_BASE.replace(/\/api\/?$/, ""); // http://127.0.0.1:8000
+  const base = API_BASE.replace(/\/api\/?$/, ""); // matches configured API host
   return path.startsWith("/media") ? `${base}${path}` : path;
 }
 
